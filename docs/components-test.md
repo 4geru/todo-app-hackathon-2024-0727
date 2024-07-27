@@ -31,7 +31,7 @@
 ./src/components/dashboard/delete-todo-modal.tsx
 ./src/components/dashboard/todo-table.tsx
 ./src/components/dashboard/app-sidebar.tsx
-./src/components/dashboard/create-todo-modal.tsx
+./src/components/dashboard/create-todo-modal.tsx -> DONE
 ./src/components/dashboard/user-stories.tsx
 ./src/components/global/user-avatar.tsx
 ./src/components/global/tailwind-indicator.tsx
