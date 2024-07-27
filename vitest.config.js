@@ -6,6 +6,12 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     setupFiles: ["./setupTests.js"],
-    globals: true
+    globals: true,
+    coverage: {
+      reportsDirectory: './coverage',
+      reporter: ['text', 'html'],
+      exclude: ['node_modules/', 'dist/', 'coverage/', 'vite.config.js'],
+      include: ['src/'],
+    }
   },
 });
