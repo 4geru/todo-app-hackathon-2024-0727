@@ -1,3 +1,13 @@
+## repository for 【JTC】東京QA/テスト自動化ハッカソン
+
+[【JTC】東京QA/テスト自動化ハッカソン](https://japantestcommunity.connpass.com/event/322507/)
+
+Suponsor by [Japan Test Community](https://japantestcommunity.connpass.com/) / [ALLEGIS GROUP](https://www.allegisgroup.com/en)
+
+we are management task and bug report in [spread sheet](https://docs.google.com/spreadsheets/d/1cF4rokWP3sZ98h_SvTdifVYk9Pqju32Vk1mVuT_3LOc/edit?gid=424652839).
+
+## App informations
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Prerequisites
