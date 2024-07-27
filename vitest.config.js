@@ -10,7 +10,8 @@ export default defineConfig({
     coverage: {
       reportsDirectory: './coverage',
       reporter: ['text', 'html'],
-      exclude: ['node_modules/', 'dist/', 'coverage/', 'vite.config.js']
+      exclude: ['node_modules/', 'dist/', 'coverage/', 'vite.config.js'],
+      include: ['src/'],
     }
   },
 });
