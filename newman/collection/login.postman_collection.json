@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "ea2075bc-3309-4cff-9556-8469b73807b3",
+		"name": "login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13846593"
+	},
+	"item": [
+		{
+			"name": "Get csrf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// レスポンスから値を取得",
+							"let jsonData = pm.response.json();",
+							"",
+							"// 例: レスポンスの中にある userId フィールドを取得",
+							"let csrfToken = jsonData.csrfToken;",
+							"",
+							"// 環境変数に保存",
+							"pm.environment.set('csrfToken', csrfToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9,ja;q=0.8"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "__Host-next-auth.csrf-token=2cfa90bb11f23250909351560c7d00d7a76681da9c2afd8abb08e5589fc49199%7Cd5b447ab1e34336637d73af921c77f092054a5be615057fca2dfc238f9870986; __Secure-next-auth.callback-url=https%3A%2F%2Ftodo-app-qajp.vercel.app%2Ftodo"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://todo-app-qajp.vercel.app/login?from=%2Ftodo"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/auth/csrf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"csrf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code check\", function () {",
+							" expectedStatus = pm.iterationData.get(\"status\");",
+							"    pm.response.to.have.status(expectedStatus);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9,ja;q=0.8"
+					},
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "cookie",
+						"value": "__Host-next-auth.csrf-token=2cfa90bb11f23250909351560c7d00d7a76681da9c2afd8abb08e5589fc49199%7Cd5b447ab1e34336637d73af921c77f092054a5be615057fca2dfc238f9870986; __Secure-next-auth.callback-url=https%3A%2F%2Ftodo-app-qajp.vercel.app%2Ftodo"
+					},
+					{
+						"key": "origin",
+						"value": "https://todo-app-qajp.vercel.app"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://todo-app-qajp.vercel.app/login?from=%2Ftodo"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "redirect",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "csrfToken",
+							"value": "{{csrfToken}}",
+							"type": "text"
+						},
+						{
+							"key": "callbackUrl",
+							"value": "https://todo-app-qajp.vercel.app/login?from=%2Ftodo",
+							"type": "text"
+						},
+						{
+							"key": "json",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/auth/callback/credentials",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"callback",
+						"credentials"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "csrfToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://todo-app-qajp.vercel.app",
+			"type": "string"
+		}
+	]
+}

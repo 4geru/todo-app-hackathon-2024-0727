@@ -1,0 +1,22 @@
+[
+    {
+        "status": 200,
+        "email": "test-registered@hackaton.com",
+        "password": "hackaton"
+    },
+    {
+        "status": 401,
+        "email": "test-unregistered@hackaton.com",
+        "password": "hackaton"
+    },
+    {
+        "status": 401,
+        "email": "test-registered@hackaton.com",
+        "password": "12345"
+    },
+    {
+        "status": 401,
+        "email": "",
+        "password": "123456"
+    }
+]
