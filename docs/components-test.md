@@ -19,9 +19,9 @@
 ./src/components/ui/input.tsx
 ./src/components/ui/form.tsx
 ./src/components/landing/signout-dropdown.tsx
-./src/components/landing/user-menu.tsx
+./src/components/landing/user-menu.tsx -> doing
 ./src/components/landing/signin-button.tsx
-./src/components/landing/landingpage-menu.tsx
+./src/components/landing/landingpage-menu.tsx -> doing
 ./src/components/landing/canvas.tsx
 ./src/components/landing/particle.tsx
 ./src/components/dashboard/app-menu.tsx
