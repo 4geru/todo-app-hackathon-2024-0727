@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "1211d26e-1e54-464d-a6b9-52a47ae68224",
+		"name": "signup-failed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13846593"
+	},
+	"item": [
+		{
+			"name": "Sign up",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code check\", function () {",
+							" expectedStatus = pm.iterationData.get(\"status\");",
+							"    pm.response.to.have.status(expectedStatus);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/x-component"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9,ja;q=0.8"
+					},
+					{
+						"key": "content-type",
+						"value": "text/plain;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "__Host-next-auth.csrf-token=2cfa90bb11f23250909351560c7d00d7a76681da9c2afd8abb08e5589fc49199%7Cd5b447ab1e34336637d73af921c77f092054a5be615057fca2dfc238f9870986; __Secure-next-auth.callback-url=https%3A%2F%2Ftodo-app-qajp.vercel.app%2Ftodo"
+					},
+					{
+						"key": "next-action",
+						"value": "4b1dd93dcb37e9e574d6a288c9e29140b6cdce84"
+					},
+					{
+						"key": "next-router-state-tree",
+						"value": "%5B%22%22%2C%7B%22children%22%3A%5B%22(auth)%22%2C%7B%22children%22%3A%5B%22register%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%5D%7D%5D%7D%5D%7D%2Cnull%2Cnull%2Ctrue%5D"
+					},
+					{
+						"key": "next-url",
+						"value": "/register"
+					},
+					{
+						"key": "origin",
+						"value": "https://todo-app-qajp.vercel.app"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://todo-app-qajp.vercel.app/register"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"email\": \"{{email}}\",\n        \"password\": \"{{password}}\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://todo-app-qajp.vercel.app",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "status": 500,
+        "email": "test-registered@hackaton.com",
+        "password": "12345"
+    },
+    {
+        "status": 500,
+        "email": "",
+        "password": "123456"
+    },
+    {
+        "status": 500,
+        "email": "test-registered@hackaton.com",
+        "password": "hackason"
+    }
+]
